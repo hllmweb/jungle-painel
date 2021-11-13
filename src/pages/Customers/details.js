@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header';
 import Title from '../../components/Title';
 import { FiAnchor } from 'react-icons/fi';
-import { useParams, Redirect } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Webcam from "react-webcam";
 // import Homecam from '../../components/WebcamCapture';
 import api from '../../services/api';
@@ -32,7 +32,7 @@ export default function Details(props){
     // const {title} = location.state.title;
     // const history = useHistory();
 
-   
+   console.log(data)
       
     useEffect(() => {
         async function handleList(){
@@ -141,8 +141,8 @@ export default function Details(props){
                         <select name="status" value={status} onChange={(e) => setStatus(e.target.value)}>
                             
                             {/* <option selected="selected">Selecione</option> */}
-                            {status == 0 && <option value="0">Pendente</option>}
-                            {status == 1 && <option value="1">Autorizar</option>}
+                            {status === 0 && <option value="0">Pendente</option>}
+                            {status === 1 && <option value="1">Autorizar</option>}
                             <option value="0">Pendente</option>
                             <option value="1">Autorizar</option>
                         </select>
