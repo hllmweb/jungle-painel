@@ -1,0 +1,101 @@
+.page-tab{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: .8em 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.page-tab li{
+    align-items: center;
+    text-align: center;
+    flex:auto;
+}
+.page-tab li a{
+    padding:1em 0;
+    background-color: #9C99FF;
+    color:#FFF;
+    display: block;
+}
+.page-tab li a.active{
+    background-color: #4A5FD9;
+}
+.page-list li a{
+    padding:.5em;
+    text-decoration: none;
+    color:#111;
+}
+.page-list li a svg{
+    vertical-align: middle;
+}
+.page-list{
+    list-style: none;
+}
+.page-list li{
+    padding:.8em;
+    margin-bottom:0.8em;
+    background-color: #FFF;
+    border-radius:6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.page-list-title{
+    color:#111;
+    font-weight: 800;
+}
+.page-list-title span{
+    font-weight: 400;
+}
+.tag{
+    background-color: #16c784;
+    color:#075537;
+    border-radius:6px;
+    font-size:0.8em;
+}
+
+.form-customers label{
+    margin-bottom: .5em;
+    font-size:1.4em;
+}
+
+.form-customers input, textarea, select{
+    margin-bottom: 1em;
+    padding:.7em;
+    border:1px solid #dddddd;
+    border-radius:5px;
+    max-width: 600px;
+}
+
+.form-customers input:disabled{
+    cursor: not-allowed;
+}
+
+.form-customers button{
+    max-width: 600px;
+}
+.form-photo{
+    margin-bottom:1em;
+}
+.btn{
+    cursor:pointer;
+    background-color: #16c784;
+    padding:1em 0;
+    display: block;
+    text-align: center;
+    color: #FFF;
+    /* color:#223edd; */
+    border-radius:5px;
+}
+.btn-capture{
+    cursor:pointer;
+    background-color: #16c784;
+    display: block;
+    text-align: center;
+    color: #FFF;
+    /* color:#223edd; */
+    border-radius:5px; 
+    font-weight: bold;
+}
