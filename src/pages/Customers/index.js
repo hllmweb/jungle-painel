@@ -2,21 +2,26 @@ import Header from '../../components/Header';
 import Title from '../../components/Title';
 import { FiAnchor, FiEdit } from 'react-icons/fi';
 import api from '../../services/api';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './customers.css';
+import { AuthContext } from '../../contexts/auth';
 // import Homecam from '../../components/WebcamCapture';
 
 
 export default function Customers(){
+    const { user } = useContext(AuthContext);
+    let infoActiveTab
+    infoActiveTab =  (user.type_user === 'administrador') ? 'in_progress' : 'completed';
     
     const [data, setData] = useState([]);
-    const [TabActive, setTabActive] = useState('in_progress');
+    const [TabActive, setTabActive] = useState(infoActiveTab);
     //const [itens, setItens] = useState([]);
     // const [loading, setLoading] = useState(true);
     // const [loadingMore, setLoadingMore] = useState(false)
     // const [imageUrl, setImage] = useState();
-    
+   
+    console.log(user.type_user);
 
 
 
@@ -153,7 +158,7 @@ export default function Customers(){
                     <Link to="/addcustomers" className="btn btn-success">Adicionar</Link>
 
                     <ul className="page-tab">
-                        <li><Link to="#" onClick={() => changeTabSelected('in_progress')} className="active">Pendentes de Autorização</Link></li>
+                        {user.type_user === 'administrador' && <li><Link to="#" onClick={() => changeTabSelected('in_progress')} className="active">Pendentes de Autorização</Link></li>}
                         <li><Link to="#" onClick={() => changeTabSelected('completed')}>Autorizados</Link></li>
                     </ul> 
 

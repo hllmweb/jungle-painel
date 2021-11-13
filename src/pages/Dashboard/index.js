@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { AuthContext } from '../../contexts/auth'
+// import { useContext } from 'react';
+// import { AuthContext } from '../../contexts/auth'
 
 import Header from '../../components/Header';
 import Title from '../../components/Title';
@@ -7,11 +7,11 @@ import { FiHome } from 'react-icons/fi';
 
 export default function Dashboard(){
 
-    const { signOut } = useContext(AuthContext);
+    // const { signOut } = useContext(AuthContext);
 
-    const logout = () => {
-        signOut();
-    }
+    // const logout = () => {
+    //     signOut();
+    // }
 
     return(
         <div>
@@ -28,7 +28,7 @@ export default function Dashboard(){
             
             
             
-            <button onClick={()=>logout()}>Sair</button>
+            {/* <button onClick={()=>logout()}>Sair</button> */}
         </div>
     );
 }

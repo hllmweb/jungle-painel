@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header';
+import { useContext } from 'react';
 import Title from '../../components/Title';
 import { FiAnchor } from 'react-icons/fi';
 import { useParams } from "react-router-dom";
@@ -7,11 +8,14 @@ import Webcam from "react-webcam";
 // import Homecam from '../../components/WebcamCapture';
 import api from '../../services/api';
 import { toast } from "react-toastify";
+import { AuthContext } from '../../contexts/auth';
 //useLocation
 
 export default function Details(){
     const { id } = useParams();
     const webcamRef = React.useRef(null);
+    const { user } = useContext(AuthContext);
+    console.log(user.type_user);
     //const title = props.location.detalhes.title;
     // const type_service = props.location.detalhes.type_service;
 
@@ -94,8 +98,8 @@ export default function Details(){
 
 
     const videoConstraints = {
-        width: 220,
-        height: 200,
+        width: "100%",
+        height: "100%",
         facingMode: "environment"
     };
 
@@ -138,15 +142,16 @@ export default function Details(){
 
                         <input type="hidden" name="image_viewfinder" value={image_viewfinder} onChange={(e) => setImage_ViewFinder(e.target.value)}/>
                         
+                        
+                        {user.type_user === 'administrador' && <div>
                         <label>Status</label>
                         <select name="status" value={status} onChange={(e) => setStatus(e.target.value)}>
-                            
-                            {/* <option selected="selected">Selecione</option> */}
                             {status === 0 && <option value="0">Pendente</option>}
                             {status === 1 && <option value="1">Autorizar</option>}
                             <option value="0">Pendente</option>
                             <option value="1">Autorizar</option>
-                        </select>
+                        </select></div>}
+
                         {/* {image_viewfinder !== '' ? <img src={image_viewfinder} alt={title} width="250" className="form-photo"/>: <Homecam />} */}
                         {/* <Homecam data_imagem={image_viewfinder}/> */}
 

@@ -5,6 +5,7 @@
     background-color: #181c18;
     position: fixed;
     height: 100%;
+    box-sizing: border-box;
     overflow: auto;
 }
 
@@ -30,6 +31,26 @@
 .content{
     margin-left:200px;
     padding:1px 16px;
+}
+.sidebar-footer{
+    display: block;
+    box-sizing: border-box;
+    padding:0.8em;
+}
+.sidebar-footer span{
+    color:#FFF;
+    padding:1.5em;
+    text-align: center;
+}
+.sidebar-footer .logout-btn{
+    display: block;
+    box-sizing: border-box;
+    border:0;
+    padding:0;
+    margin: 0 1.5em;
+    text-align: center;
+    font-size:1em;
+    color:red;
 }
 
 
