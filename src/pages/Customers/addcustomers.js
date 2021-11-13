@@ -44,8 +44,8 @@ export default function AddCustomers(){
                 <div className="container">
                     <form className="form-customers" onSubmit={handleSave}>
                         <label>Titulo</label>
-                        <select name="title" value={title} onChange={(e) => setTitle(e.target.value)}>
-                            <option selected="selected">Selecione</option>
+                        <select name="title"  value={title} onChange={(e) => setTitle(e.target.value)}>
+                            <option value="0" selected>Selecione</option>
                             <option value="Iate A">Iate A</option>
                             <option value="Iate B">Iate B</option>
                         </select>
@@ -54,7 +54,7 @@ export default function AddCustomers(){
                         <label>Tipo de Serviço</label>
                         {/* <input type="text" name="type_service" value={type_service} onChange={(e) => setType_Service(e.target.value)}/> */}
                         <select name="type_service" value={type_service} onChange={(e) => setType_Service(e.target.value)}>
-                            <option selected="selected">Selecione</option>
+                            <option value="0">Selecione</option>
                             <option value="Abastecimento">Abastecimento</option>
                             <option value="Manuteção">Manutenção</option>
                         </select>

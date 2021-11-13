@@ -9,7 +9,7 @@ import api from '../../services/api';
 import { toast } from "react-toastify";
 //useLocation
 
-export default function Details(props){
+export default function Details(){
     const { id } = useParams();
     const webcamRef = React.useRef(null);
     //const title = props.location.detalhes.title;
@@ -26,6 +26,7 @@ export default function Details(props){
 
 
     const [data, setData] = useState([]);
+    
     // const status = props.location.detalhes.status;
     // const [status_item, setStatus_Item] = useState();
     // const location = useLocation();
@@ -58,7 +59,7 @@ export default function Details(props){
             
         }
 
-    },[])
+    },[id])
 
     const [title, setTitle]                         = useState()
     const [type_service, setType_Service]           = useState()
