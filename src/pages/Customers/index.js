@@ -146,7 +146,18 @@ export default function Customers(){
 
     // console.log(data)
 
-
+    const formatData = (value) => {
+        let data = new Date(value);
+        //let dataFormat = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+        let dia = data.getDate().toString().padStart(2, '0')
+        let mes  = (data.getMonth()+1).toString().padStart(2, '0')
+        let ano  = data.getFullYear();
+        let hora = data.getHours();
+        let minuto = (data.getMinutes()+1).toString().padStart(2, '0');
+        let segundo = data.getSeconds();
+        let dataFormat = `${dia}/${mes}/${ano} ${hora}:${minuto}:${segundo}`;
+        return dataFormat;
+    }
     return(
         <div>
             <Header />
@@ -169,7 +180,7 @@ export default function Customers(){
                         {data.map((item, index)=>{
                             return(
                                 <li key={index}>
-                                    <div className="page-list-title">{item.title}<br /><span>{item.type_service}</span></div> 
+                                    <div className="page-list-title">{item.title}<br /><span>{item.type_service} <br /> Data/Hora da Solicitação: {formatData(item.dt_solicitacion)}</span></div> 
                                     <div className="page-list-acao">
                                         {/* <Link to="" className="tag">AUTORIZAR</Link> */}
                                         <Link to={{
