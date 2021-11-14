@@ -71,6 +71,7 @@
 
 .form-customers input:disabled{
     cursor: not-allowed;
+    background-color: rgb(224, 224, 224);
 }
 
 .form-customers button{
@@ -97,5 +98,26 @@
     color: #FFF;
     /* color:#223edd; */
     border-radius:5px; 
+    font-weight: bold;
+}
+.phono-none{
+    font-size:1em;
+    padding:1em 0;
+    margin-right: 1em;
+    color:red;
+    font-weight: bold;
+}
+.text-green{
+    color:rgb(127, 199, 19);
+    font-size:1em;
+    padding:1em 0;
+    margin-right: 1em;
+    font-weight: bold;
+}
+.text-red{
+    font-size:1em;
+    padding:1em 0;
+    margin-right: 1em;
+    color:red;
     font-weight: bold;
 }

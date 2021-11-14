@@ -121,13 +121,13 @@ export default function Details(){
                 <div className="container">
                     <form className="form-customers" onSubmit={handleSave}>
                         <label>Titulo</label>
-                        <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+                        <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} disabled/>
 
                         <label>Tipo de Serviço</label>
-                        <input type="text" name="type_service" value={type_service} onChange={(e) => setType_Service(e.target.value)}/>
-                        {image_viewfinder===null && <button onClick={(e)=>{e.preventDefault();capture();}} className="btn-capture">Capturar Visor</button>}
+                        <input type="text" name="type_service" value={type_service} onChange={(e) => setType_Service(e.target.value)} disabled/>
+                        {image_viewfinder===null && user.type_user !== 'administrador' && <button onClick={(e)=>{e.preventDefault();capture();}} className="btn-capture">Capturar Visor</button>}
 
-                        {image_viewfinder===null ?
+                        {image_viewfinder===null && user.type_user !== 'administrador' &&
                         <Webcam
                             audio={false}
                             ref={webcamRef}
@@ -135,10 +135,16 @@ export default function Details(){
                             width="100%"
                             height="100%"
                             videoConstraints={videoConstraints}
-                        />:
-                        <img src={image_viewfinder} alt="imagem capturada" width="100%"
-                        height="100%" className="form-photo"/>   
-                        }
+                        />}
+                        
+                       {image_viewfinder !== null ?
+                       <img src={image_viewfinder} alt="imagem capturada" width="100%"
+                       height="100%" className="form-photo"/> 
+                       : <div className="phono-none">Foto Não Anexada</div>
+                       }
+
+                        
+                        
 
                         <input type="hidden" name="image_viewfinder" value={image_viewfinder} onChange={(e) => setImage_ViewFinder(e.target.value)}/>
                         

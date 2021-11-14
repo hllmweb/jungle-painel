@@ -11,11 +11,11 @@ import { AuthContext } from '../../contexts/auth';
 
 export default function Customers(){
     const { user } = useContext(AuthContext);
-    let infoActiveTab
-    infoActiveTab =  (user.type_user === 'administrador') ? 'in_progress' : 'completed';
+    // let infoActiveTab
+    // infoActiveTab =  (user.type_user === 'administrador') ? 'in_progress' : 'completed';
     
     const [data, setData] = useState([]);
-    const [TabActive, setTabActive] = useState(infoActiveTab);
+    const [TabActive, setTabActive] = useState('in_progress');
     //const [itens, setItens] = useState([]);
     // const [loading, setLoading] = useState(true);
     // const [loadingMore, setLoadingMore] = useState(false)
@@ -158,7 +158,8 @@ export default function Customers(){
                     <Link to="/addcustomers" className="btn btn-success">Adicionar</Link>
 
                     <ul className="page-tab">
-                        {user.type_user === 'administrador' && <li><Link to="#" onClick={() => changeTabSelected('in_progress')} className="active">Pendentes de Autorização</Link></li>}
+                        {/* {user.type_user === 'administrador' && <li><Link to="#" onClick={() => changeTabSelected('in_progress')} className="active">Pendentes de Autorização</Link></li>} */}
+                        <li><Link to="#" onClick={() => changeTabSelected('in_progress')} className="active">Pendentes de Autorização</Link></li>
                         <li><Link to="#" onClick={() => changeTabSelected('completed')}>Autorizados</Link></li>
                     </ul> 
 
@@ -180,9 +181,10 @@ export default function Customers(){
                                             //     obs: item.obs,
                                             //     image_viewfinder: item.image_viewfinder 
                                             // }
-                                        }}
-                                           
-                                        ><FiEdit color="#111" size={20}/> Editar</Link>                                    
+                                        }}>
+                                            {item.image_viewfinder === null && <span className="phono-none">Imagem Não Anexada</span>}
+                                            {item.status === '0' ? <span className="text-red">Pendente de Autorização</span>: <span className="text-green">Autorizado</span>}
+                                            <FiEdit color="#111" size={20}/> Editar</Link>                                    
                                     </div>    
                                 </li>
                             )
