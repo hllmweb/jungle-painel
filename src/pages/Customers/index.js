@@ -166,7 +166,7 @@ export default function Customers(){
                     <FiAnchor size={25} color="#000"/>
                 </Title>
                 <div className="page">
-                    <Link to="/addcustomers" className="btn btn-success">Adicionar</Link>
+                    {user.type_user !== 'administrador' && <Link to="/addcustomers" className="btn btn-success">Adicionar</Link>}
 
                     <ul className="page-tab">
                         {/* {user.type_user === 'administrador' && <li><Link to="#" onClick={() => changeTabSelected('in_progress')} className="active">Pendentes de Autorização</Link></li>} */}
