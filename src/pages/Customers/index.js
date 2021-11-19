@@ -158,6 +158,10 @@ export default function Customers(){
     //     let dataFormat = `${dia}/${mes}/${ano} ${hora}:${minuto}:${segundo}`;
     //     return dataFormat;
     // }
+
+    const changeStatusSelected = (status, id) => {
+        alert(id);
+    }
     return(
         <div>
             <Header />
@@ -170,7 +174,10 @@ export default function Customers(){
 
                     <ul className="page-tab">
                         {/* {user.type_user === 'administrador' && <li><Link to="#" onClick={() => changeTabSelected('in_progress')} className="active">Pendentes de Autorização</Link></li>} */}
+                        
+                        
                         <li><Link to="#" onClick={() => changeTabSelected('in_progress')} className="active">Pendentes de Autorização</Link></li>
+                        <li><Link to="#" onClick={() => changeTabSelected('in_progress')} className="active">Pendente de Informação</Link></li>
                         <li><Link to="#" onClick={() => changeTabSelected('completed')}>Autorizados</Link></li>
                     </ul> 
 
@@ -194,8 +201,10 @@ export default function Customers(){
                                             // }
                                         }}>
                                             {item.image_viewfinder === null && <span className="phono-none">Imagem Não Anexada</span>}
-                                            {item.status === '0' ? <span className="text-red">Pendente de Autorização</span>: <span className="text-green">Autorizado</span>}
-                                            <FiEdit color="#111" size={20}/> Editar</Link>                                    
+                                            {item.status === '0' ? <Link to="#" className="text-red" onClick={() => changeStatusSelected(1, item.id)}>Pendente de Autorização</Link>: <Link to="#" className="text-green">Autorizado</Link>}
+                                            <FiEdit color="#111" size={20}/> Editar</Link>   
+
+                              
                                     </div>    
                                 </li>
                             )
