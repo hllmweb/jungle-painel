@@ -146,18 +146,18 @@ export default function Customers(){
 
     // console.log(data)
 
-    const formatData = (value) => {
-        let data = new Date(value);
-        //let dataFormat = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
-        let dia = data.getDate().toString().padStart(2, '0')
-        let mes  = (data.getMonth()+1).toString().padStart(2, '0')
-        let ano  = data.getFullYear();
-        let hora = (data.getHours()+1).toString().padStart(2, '0');
-        let minuto = (data.getMinutes()+1).toString().padStart(2, '0');
-        let segundo = (data.getSeconds()+1).toString().padStart(2, '0');
-        let dataFormat = `${dia}/${mes}/${ano} ${hora}:${minuto}:${segundo}`;
-        return dataFormat;
-    }
+    // const formatData = (value) => {
+    //     let data = new Date(value);
+    //     //let dataFormat = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+    //     let dia = data.getDate().toString().padStart(2, '0')
+    //     let mes  = (data.getMonth()+1).toString().padStart(2, '0')
+    //     let ano  = data.getFullYear();
+    //     let hora = (data.getHours()+1).toString().padStart(2, '0');
+    //     let minuto = (data.getMinutes()+1).toString().padStart(2, '0');
+    //     let segundo = (data.getSeconds()+1).toString().padStart(2, '0');
+    //     let dataFormat = `${dia}/${mes}/${ano} ${hora}:${minuto}:${segundo}`;
+    //     return dataFormat;
+    // }
     return(
         <div>
             <Header />
