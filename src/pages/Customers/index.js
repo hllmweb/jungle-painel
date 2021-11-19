@@ -180,7 +180,7 @@ export default function Customers(){
                         {data.map((item, index)=>{
                             return(
                                 <li key={index}>
-                                    <div className="page-list-title">{item.title}<br /><span>{item.type_service} <br /> Data/Hora da Solicitação: {formatData(item.dt_solicitacion)}</span></div> 
+                                    <div className="page-list-title">{item.title}<br /><span>{item.type_service} <br /> Data/Hora da Solicitação: {item.dt_solicitacion}</span></div> 
                                     <div className="page-list-acao">
                                         {/* <Link to="" className="tag">AUTORIZAR</Link> */}
                                         <Link to={{
